@@ -6,6 +6,14 @@ This is a full-stack portfolio website built for Cameron Crook, showcasing his g
 
 Preferred communication style: Simple, everyday language.
 
+## Portfolio Content Preferences (Updated 2025-01-14)
+- Maintain humble, graduate-appropriate tone throughout
+- All skills described as "proficient" rather than advanced/expert language
+- Role described as "Game Developer & Software Developer"
+- Avoid "cutting edge" or overly ambitious language
+- Include Cameron Crook name prominently in navigation and hero section
+- Emphasize learning and growth mindset suitable for recent graduate
+
 # System Architecture
 
 ## Frontend Architecture
@@ -27,10 +35,16 @@ Preferred communication style: Simple, everyday language.
 - **Form Handling**: React Hook Form with Zod validation for contact forms
 
 ## Database Schema
-- **Projects**: Stores portfolio projects with title, description, technologies, images, and status
-- **Experience**: Professional work history with companies, roles, and responsibilities  
-- **Skills**: Technical capabilities organized by category with icons and descriptions
+- **Projects**: Stores portfolio projects with title, description, technologies, images, and status (completed, in-progress, coming-soon)
+- **Experience**: Professional work history including Clarksons Research placement year with detailed responsibilities
+- **Skills**: Technical capabilities organized by category, all marked as "proficient" level
 - **Schema Definition**: Drizzle ORM with PostgreSQL dialect and Zod validation schemas
+
+### Current Portfolio Content
+- **Featured Projects**: 10 completed projects from university and personal work
+- **Upcoming Projects**: 3 placeholder projects (Compression Algorithm in Java, Tankz multiplayer game, VR Unity game)
+- **Professional Experience**: Clarksons Research placement year with C#, XAML, VBA, SQL
+- **Skills**: 6 categories covering programming languages, game development, web development, databases, creative tools, and specializations
 
 ## Development Workflow
 - **Build Process**: Vite for frontend bundling, esbuild for backend compilation
