@@ -14,10 +14,10 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
+      <AboutSection />
       <ProjectsSection />
       <ExperienceSection />
       <SkillsSection />
-      <AboutSection />
       <div id="cv">
         <CVSection />
       </div>

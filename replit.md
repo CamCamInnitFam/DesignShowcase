@@ -13,6 +13,8 @@ Preferred communication style: Simple, everyday language.
 - Avoid "cutting edge" or overly ambitious language
 - Include Cameron Crook name prominently in navigation and hero section
 - Emphasize learning and growth mindset suitable for recent graduate
+- About Me section positioned above work sections per user preference
+- Internal project routing system with placeholder pages instead of external links
 
 # System Architecture
 

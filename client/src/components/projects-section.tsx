@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { type Project } from "@shared/schema";
 import { useState } from "react";
 import { ExternalLink, Code2, Calendar } from "lucide-react";
+import { Link } from "wouter";
 
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -145,17 +146,15 @@ export function ProjectsSection() {
                 </div>
                 
                 <div className="flex space-x-2">
-                  {project.projectUrl && project.status === "completed" && (
-                    <a 
+                  {project.projectUrl && (
+                    <Link 
                       href={project.projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="flex items-center space-x-1 text-primary hover:underline text-sm font-medium"
                       data-testid={`project-link-${project.id}`}
                     >
                       <ExternalLink className="h-3 w-3" />
                       <span>View Project</span>
-                    </a>
+                    </Link>
                   )}
                   {project.githubUrl && (
                     <a 

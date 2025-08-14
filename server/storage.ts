@@ -41,7 +41,7 @@ export class MemStorage implements IStorage {
         technologies: ["C++", "Game Engine"],
         category: "Game Engines",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/05/GEF-demo.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/collision-detection-subsystem/",
+        projectUrl: "/project/collision-game-engine-subsystem",
         status: "completed",
         featured: "true"
       },
@@ -51,7 +51,7 @@ export class MemStorage implements IStorage {
         technologies: ["Unity", "Game Design"],
         category: "Complete Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/castleRescueStart.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/castle-rescue/",
+        projectUrl: "/project/castle-rescue",
         status: "completed",
         featured: "true"
       },
@@ -61,7 +61,7 @@ export class MemStorage implements IStorage {
         technologies: ["C++", "AI"],
         category: "Complete Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/GamesAI.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/ci516-games-ai-rts/",
+        projectUrl: "/project/rts-game-with-ai",
         status: "completed",
         featured: "true"
       },
@@ -71,7 +71,7 @@ export class MemStorage implements IStorage {
         technologies: ["C++", "Simulation"],
         category: "Complete Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/pigelimsim.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/games-programming-pig-elimination-simulator/",
+        projectUrl: "/project/pig-elimination-simulator",
         status: "completed",
         featured: "false"
       },
@@ -81,7 +81,7 @@ export class MemStorage implements IStorage {
         technologies: ["JavaScript", "Web"],
         category: "Web Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2021/12/image-1.png",
-        projectUrl: "http://cc1501.brighton.domains/tanksJS/",
+        projectUrl: "/project/battle-of-the-tanks",
         status: "completed",
         featured: "true"
       },
@@ -91,7 +91,7 @@ export class MemStorage implements IStorage {
         technologies: ["Unreal Engine", "3D"],
         category: "Complete Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2021/12/image-2.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/wizz-unreal-engine-game/",
+        projectUrl: "/project/wizz",
         status: "completed",
         featured: "false"
       },
@@ -101,7 +101,7 @@ export class MemStorage implements IStorage {
         technologies: ["JavaScript", "Platformer"],
         category: "Web Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2021/12/image-3.png",
-        projectUrl: "http://cc1501.brighton.domains/Underwater-platformer/",
+        projectUrl: "/project/underwater-platformer",
         status: "completed",
         featured: "false"
       },
@@ -111,7 +111,7 @@ export class MemStorage implements IStorage {
         technologies: ["Unity", "Team Project"],
         category: "Complete Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/05/riotRush-2.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/riot-rush-ci536-integrated-group-project/",
+        projectUrl: "/project/riot-rush",
         status: "completed",
         featured: "false"
       },
@@ -121,7 +121,7 @@ export class MemStorage implements IStorage {
         technologies: ["Twine", "Narrative Design"],
         category: "Narrative Design",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/05/nelly.jpg",
-        projectUrl: "http://cc1501.brighton.domains/blog/the-tale-of-captain-rogers-and-the-golden-spyglass/",
+        projectUrl: "/project/the-tale-of-captain-rogers",
         status: "completed",
         featured: "false"
       },
@@ -131,7 +131,7 @@ export class MemStorage implements IStorage {
         technologies: ["Unreal Engine 5.1", "Horror"],
         category: "Complete Games",
         imageUrl: "http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/thumbnail-1.png",
-        projectUrl: "http://cc1501.brighton.domains/blog/when-the-devil-takes-hold/",
+        projectUrl: "/project/when-the-devil-takes-hold",
         status: "completed",
         featured: "true"
       },
@@ -140,6 +140,7 @@ export class MemStorage implements IStorage {
         description: "Custom data compression algorithm implementation showcasing algorithmic problem-solving skills. Project documentation coming soon.",
         technologies: ["Java", "Algorithms"],
         category: "Algorithms",
+        projectUrl: "/project/compression-algorithm",
         status: "coming-soon",
         featured: "false"
       },
@@ -148,6 +149,7 @@ export class MemStorage implements IStorage {
         description: "Network-based multiplayer tank combat game demonstrating networked gameplay programming. Built using Java and C++.",
         technologies: ["Java", "C++", "Networking"],
         category: "Complete Games",
+        projectUrl: "/project/tankz-multiplayer-game",
         status: "in-progress",
         featured: "false"
       },
@@ -156,6 +158,7 @@ export class MemStorage implements IStorage {
         description: "Virtual reality experience developed in Unity, exploring immersive interaction design and 3D spatial programming.",
         technologies: ["Unity", "VR", "3D"],
         category: "Complete Games",
+        projectUrl: "/project/vr-game",
         status: "coming-soon",
         featured: "false"
       }
