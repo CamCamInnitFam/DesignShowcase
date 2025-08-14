@@ -1,0 +1,9 @@
+# Document Placeholder Files
+
+This directory will contain the actual PDF files for:
+- Cameron_Crook_CV.pdf
+- Collision_Detection_Technical_Report.pdf
+- Castle_Rescue_Design_Document.pdf
+- RTS_AI_Research_Paper.pdf
+
+For now, the links point to placeholder locations. Replace with actual PDF files when ready.

@@ -1,8 +1,15 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve static documents
+  app.use('/documents', (req, res) => {
+    res.status(404).json({ 
+      message: "Document not found. This is a placeholder - actual PDF files need to be uploaded to client/public/documents/" 
+    });
+  });
   // Projects routes
   app.get("/api/projects", async (req, res) => {
     try {
@@ -42,6 +49,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(skills);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch skills" });
+    }
+  });
+
+  // Documents routes
+  app.get("/api/documents", async (req, res) => {
+    try {
+      const documents = await storage.getDocuments();
+      res.json(documents);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch documents" });
+    }
+  });
+
+  app.get("/api/documents/type/:type", async (req, res) => {
+    try {
+      const documents = await storage.getDocumentsByType(req.params.type);
+      res.json(documents);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch documents" });
     }
   });
 

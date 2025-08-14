@@ -1,4 +1,4 @@
-import { type Project, type InsertProject, type Experience, type InsertExperience, type Skill, type InsertSkill } from "@shared/schema";
+import { type Project, type InsertProject, type Experience, type InsertExperience, type Skill, type InsertSkill, type Document, type InsertDocument } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -11,17 +11,24 @@ export interface IStorage {
   
   getSkills(): Promise<Skill[]>;
   createSkill(skill: InsertSkill): Promise<Skill>;
+  
+  getDocuments(): Promise<Document[]>;
+  getDocument(id: string): Promise<Document | undefined>;
+  getDocumentsByType(type: string): Promise<Document[]>;
+  createDocument(document: InsertDocument): Promise<Document>;
 }
 
 export class MemStorage implements IStorage {
   private projects: Map<string, Project>;
   private experience: Map<string, Experience>;
   private skills: Map<string, Skill>;
+  private documents: Map<string, Document>;
 
   constructor() {
     this.projects = new Map();
     this.experience = new Map();
     this.skills = new Map();
+    this.documents = new Map();
     this.initializeData();
   }
 
@@ -215,6 +222,40 @@ export class MemStorage implements IStorage {
       }
     ];
 
+    const documentsData: InsertDocument[] = [
+      {
+        title: "Cameron Crook - CV",
+        description: "Comprehensive curriculum vitae highlighting education, technical skills, and professional experience",
+        type: "cv",
+        filename: "Cameron_Crook_CV.pdf",
+        fileUrl: "/documents/cameron-crook-cv.pdf"
+      },
+      {
+        title: "Collision Detection System - Technical Report",
+        description: "Detailed technical writeup covering the implementation of spatial partitioning algorithms and collision optimization",
+        type: "project-writeup",
+        filename: "Collision_Detection_Technical_Report.pdf",
+        fileUrl: "/documents/collision-detection-report.pdf",
+        projectId: "collision-engine"
+      },
+      {
+        title: "Castle Rescue - Game Design Document",
+        description: "Complete game design document including mechanics, level design, and development process",
+        type: "project-writeup",
+        filename: "Castle_Rescue_Design_Document.pdf",
+        fileUrl: "/documents/castle-rescue-design-doc.pdf",
+        projectId: "castle-rescue"
+      },
+      {
+        title: "RTS AI Implementation - Research Paper",
+        description: "Academic paper detailing AI decision-making algorithms and pathfinding implementations",
+        type: "project-writeup",
+        filename: "RTS_AI_Research_Paper.pdf",
+        fileUrl: "/documents/rts-ai-research-paper.pdf",
+        projectId: "rts-game"
+      }
+    ];
+
     // Initialize projects
     projectsData.forEach(project => {
       const id = randomUUID();
@@ -234,6 +275,13 @@ export class MemStorage implements IStorage {
       const id = randomUUID();
       const skillWithId: Skill = { ...skill, id };
       this.skills.set(id, skillWithId);
+    });
+
+    // Initialize documents
+    documentsData.forEach(document => {
+      const id = randomUUID();
+      const documentWithId: Document = { ...document, id };
+      this.documents.set(id, documentWithId);
     });
   }
 
@@ -272,6 +320,25 @@ export class MemStorage implements IStorage {
     const skill: Skill = { ...insertSkill, id };
     this.skills.set(id, skill);
     return skill;
+  }
+
+  async getDocuments(): Promise<Document[]> {
+    return Array.from(this.documents.values());
+  }
+
+  async getDocument(id: string): Promise<Document | undefined> {
+    return this.documents.get(id);
+  }
+
+  async getDocumentsByType(type: string): Promise<Document[]> {
+    return Array.from(this.documents.values()).filter(doc => doc.type === type);
+  }
+
+  async createDocument(insertDocument: InsertDocument): Promise<Document> {
+    const id = randomUUID();
+    const document: Document = { ...insertDocument, id };
+    this.documents.set(id, document);
+    return document;
   }
 }
 

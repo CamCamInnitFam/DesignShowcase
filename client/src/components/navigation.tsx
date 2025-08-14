@@ -56,6 +56,20 @@ export function Navigation() {
               About
             </button>
             <button 
+              onClick={() => scrollToSection("cv")} 
+              className="hover:text-primary transition-colors"
+              data-testid="nav-cv"
+            >
+              CV
+            </button>
+            <button 
+              onClick={() => scrollToSection("documentation")} 
+              className="hover:text-primary transition-colors"
+              data-testid="nav-documentation"
+            >
+              Documentation
+            </button>
+            <button 
               onClick={() => scrollToSection("contact")} 
               className="hover:text-primary transition-colors"
               data-testid="nav-contact"
@@ -122,6 +136,20 @@ export function Navigation() {
                 data-testid="mobile-nav-about"
               >
                 About
+              </button>
+              <button 
+                onClick={() => scrollToSection("cv")} 
+                className="text-left hover:text-primary transition-colors"
+                data-testid="mobile-nav-cv"
+              >
+                CV
+              </button>
+              <button 
+                onClick={() => scrollToSection("documentation")} 
+                className="text-left hover:text-primary transition-colors"
+                data-testid="mobile-nav-documentation"
+              >
+                Documentation
               </button>
               <button 
                 onClick={() => scrollToSection("contact")} 
