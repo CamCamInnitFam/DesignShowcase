@@ -25,7 +25,7 @@ export function HeroSection() {
           </p>
           
           <p className="text-lg text-gray-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.4s'}}>
-            Computer Science graduate with expertise in game development, software engineering, and a passion for creating immersive digital experiences.
+            Recent Computer Science graduate with experience in game development, software engineering, and a passion for creating engaging digital experiences.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{animationDelay: '0.6s'}}>

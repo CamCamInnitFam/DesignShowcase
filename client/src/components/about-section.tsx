@@ -10,16 +10,16 @@ export function AboutSection() {
               <h2 className="text-4xl font-bold mb-6">About Me</h2>
               <div className="space-y-4 text-secondary dark:text-slate-400">
                 <p>
-                  I'm a recent Computer Science graduate with a passion for game development and software engineering. My journey through university has equipped me with a solid foundation in programming, algorithms, and software design principles.
+                  I'm a recent Computer Science graduate with a passion for game development and software engineering. My university studies provided me with a solid foundation in programming, algorithms, and software design principles that I'm excited to apply professionally.
                 </p>
                 <p>
-                  During my placement year at Clarksons Research, I gained valuable professional experience developing maritime industry software using C#, XAML, VBA, and SQL. This experience taught me the importance of creating robust, user-friendly applications that solve real-world problems.
+                  During my placement year at Clarksons Research, I gained valuable hands-on experience developing maritime industry software using C#, XAML, VBA, and SQL. This experience taught me the importance of creating reliable, user-friendly applications that address real business needs.
                 </p>
                 <p>
-                  My portfolio demonstrates proficiency across multiple platforms and technologies, from low-level C++ game engines to web-based interactive experiences. I'm particularly interested in the intersection of technology and creativity, whether that's through game development, algorithm design, or innovative software solutions.
+                  My portfolio showcases work across various platforms and technologies, from C++ game engines to web-based interactive experiences. I'm particularly drawn to projects that combine technical problem-solving with creative expression, whether through game development, algorithm implementation, or practical software solutions.
                 </p>
                 <p>
-                  I believe in writing clean, maintainable code and creating applications that provide exceptional user experiences. I'm always eager to learn new technologies and take on challenging projects that push the boundaries of what's possible.
+                  I strive to write clean, well-structured code and create applications that provide good user experiences. I'm enthusiastic about learning new technologies and taking on projects that allow me to grow as a developer while contributing meaningful solutions.
                 </p>
               </div>
             </div>

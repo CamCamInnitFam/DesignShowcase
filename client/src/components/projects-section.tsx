@@ -78,7 +78,7 @@ export function ProjectsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-lg text-secondary dark:text-slate-400 max-w-2xl mx-auto">
-            A showcase of my game development and software engineering projects, spanning multiple technologies and platforms.
+            A collection of my game development and software engineering projects from university coursework, personal learning, and professional experience.
           </p>
         </div>
 

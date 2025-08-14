@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Compression Algorithm",
-        description: "Custom data compression algorithm implementation in Java. Project documentation coming soon.",
+        description: "Custom data compression algorithm implementation showcasing algorithmic problem-solving skills. Project documentation coming soon.",
         technologies: ["Java", "Algorithms"],
         category: "Algorithms",
         status: "coming-soon",
@@ -138,16 +138,16 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Tankz - Multiplayer Game",
-        description: "Network-based multiplayer tank game using Java and C++. Development in progress.",
-        technologies: ["Java", "C++", "Multiplayer"],
+        description: "Network-based multiplayer tank combat game demonstrating networked gameplay programming. Built using Java and C++.",
+        technologies: ["Java", "C++", "Networking"],
         category: "Complete Games",
         status: "in-progress",
         featured: "false"
       },
       {
         title: "VR Game",
-        description: "Immersive virtual reality experience developed in Unity. Project details to be announced.",
-        technologies: ["Unity", "VR"],
+        description: "Virtual reality experience developed in Unity, exploring immersive interaction design and 3D spatial programming.",
+        technologies: ["Unity", "VR", "3D"],
         category: "Complete Games",
         status: "coming-soon",
         featured: "false"
@@ -158,13 +158,14 @@ export class MemStorage implements IStorage {
       {
         title: "Software Developer - Placement Year",
         company: "Clarksons Research",
-        description: "Full-time placement position developing maritime industry software solutions",
+        description: "Full-time placement position developing maritime industry software solutions and data management systems",
         technologies: ["C#", "XAML", "VBA", "SQL"],
         responsibilities: [
-          "Desktop application development",
-          "Database design and optimization",
-          "User interface development",
-          "Process automation"
+          "Developed desktop applications for maritime data analysis",
+          "Designed and optimized database structures for shipping information",
+          "Created user interfaces using XAML for enhanced user experience", 
+          "Automated data processing workflows using VBA",
+          "Collaborated with maritime industry professionals to understand business requirements"
         ]
       }
     ];
@@ -180,35 +181,35 @@ export class MemStorage implements IStorage {
       {
         category: "Game Development",
         title: "Game Development",
-        description: "Professional game engine experience",
+        description: "Proficient with game engines and design",
         technologies: ["Unity", "Unreal Engine", "Game Design"],
         icon: "fas fa-gamepad"
       },
       {
         category: "Web Development",
         title: "Web Development",
-        description: "Modern web technologies and frameworks",
+        description: "Proficient in modern web technologies",
         technologies: ["HTML5", "CSS3", "Canvas API"],
         icon: "fas fa-globe"
       },
       {
         category: "Database & Tools",
         title: "Database & Tools",
-        description: "Data management and development tools",
+        description: "Proficient with data management and development tools",
         technologies: ["SQL", "XAML", "VBA"],
         icon: "fas fa-database"
       },
       {
         category: "Creative Tools",
         title: "Creative Tools",
-        description: "Interactive storytelling and design",
+        description: "Proficient in interactive storytelling and design",
         technologies: ["Twine", "Narrative Design", "UI/UX"],
         icon: "fas fa-pen-fancy"
       },
       {
         category: "Specializations",
         title: "Specializations",
-        description: "Advanced computer science concepts",
+        description: "Proficient in computer science concepts",
         technologies: ["AI", "Algorithms", "Physics"],
         icon: "fas fa-brain"
       }
@@ -217,19 +218,22 @@ export class MemStorage implements IStorage {
     // Initialize projects
     projectsData.forEach(project => {
       const id = randomUUID();
-      this.projects.set(id, { ...project, id });
+      const projectWithId: Project = { ...project, id };
+      this.projects.set(id, projectWithId);
     });
 
     // Initialize experience
     experienceData.forEach(exp => {
       const id = randomUUID();
-      this.experience.set(id, { ...exp, id });
+      const expWithId: Experience = { ...exp, id };
+      this.experience.set(id, expWithId);
     });
 
     // Initialize skills
     skillsData.forEach(skill => {
       const id = randomUUID();
-      this.skills.set(id, { ...skill, id });
+      const skillWithId: Skill = { ...skill, id };
+      this.skills.set(id, skillWithId);
     });
   }
 

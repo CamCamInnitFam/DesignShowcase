@@ -34,7 +34,7 @@ export function SkillsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
           <p className="text-lg text-secondary dark:text-slate-400 max-w-2xl mx-auto">
-            Proficient across multiple programming languages, frameworks, and development environments.
+            Proficient in multiple programming languages, frameworks, and development environments gained through academic projects and professional experience.
           </p>
         </div>
 
