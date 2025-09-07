@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            500: '#2563EB',
+                            600: '#1D4ED8',
+                            700: '#1E40AF',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            },
+            darkMode: 'class'
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        html { scroll-behavior: smooth; }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            transform: scale(1.05);
+        }
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+        .project-image {
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-primary-500">Portfolio</div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-slate-700 dark:text-slate-300 hover:text-primary-500 transition-colors">Home</a>
+                    <a href="#projects" class="text-slate-700 dark:text-slate-300 hover:text-primary-500 transition-colors">Projects</a>
+                    <a href="#about" class="text-slate-700 dark:text-slate-300 hover:text-primary-500 transition-colors">About</a>
+                    <a href="#contact" class="text-slate-700 dark:text-slate-300 hover:text-primary-500 transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
+                    Game Developer
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+                    Creating immersive gaming experiences with cutting-edge technology and innovative design
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="px-8 py-4 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-all transform hover:scale-105 shadow-lg">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border-2 border-primary-500 text-primary-500 rounded-lg hover:bg-primary-500 hover:text-white transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 animate-float">
+                <i class="fas fa-gamepad text-6xl text-primary-500 opacity-20"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Explore my collection of games and engines built with various technologies
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-3 rounded-full bg-primary-500 text-white font-medium transition-all hover:scale-105" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all hover:scale-105" data-filter="cpp">
+                    C++
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all hover:scale-105" data-filter="unity">
+                    Unity
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all hover:scale-105" data-filter="unreal">
+                    Unreal Engine
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all hover:scale-105" data-filter="web">
+                    Web/JavaScript
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all hover:scale-105" data-filter="narrative">
+                    Narrative Design
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- @COMPONENT: ProjectCard [Collision Game Engine] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="cpp engine">
+                    <div class="relative overflow-hidden">
+                        <!-- A 3D collision detection visualization showing geometric shapes and collision boundaries -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/05/GEF-demo.png" alt="Collision Game Engine Subsystem demonstration" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full">C++</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-sm rounded-full">Game Engine</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Collision Game Engine Subsystem</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Advanced collision detection system built in C++ featuring spatial partitioning, continuous collision detection, and optimized algorithms for real-time game physics.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/collision-detection-subsystem/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Castle Rescue] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="unity game">
+                    <div class="relative overflow-hidden">
+                        <!-- A medieval castle rescue game scene with towers, characters and adventure elements -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/castleRescueStart.png" alt="Castle Rescue game start screen" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 text-sm rounded-full">Unity</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-sm rounded-full">Adventure Game</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Castle Rescue</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            An action-adventure game developed in Unity featuring puzzle-solving, character progression, and immersive medieval environments with rescue mission gameplay.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/castle-rescue/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [RTS Game] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="cpp game ai">
+                    <div class="relative overflow-hidden">
+                        <!-- A real-time strategy game interface showing units, buildings, and tactical battlefield view -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/GamesAI.png" alt="RTS Game with AI systems" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full">C++</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-sm rounded-full">RTS</span>
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 text-sm rounded-full">AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">RTS Game with AI</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Real-time strategy game implemented in C++ featuring advanced AI systems, pathfinding algorithms, and strategic gameplay mechanics with intelligent opponent behavior.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/ci516-games-ai-rts/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Pig Elimination Simulator] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="cpp game simulation">
+                    <div class="relative overflow-hidden">
+                        <!-- A simulation game showing pig characters in various elimination scenarios with game mechanics -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/pigelimsim.png" alt="Pig Elimination Simulator gameplay" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full">C++</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-sm rounded-full">Simulation</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Pig Elimination Simulator</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            A physics-based simulation game developed in C++ featuring dynamic environments, particle systems, and realistic game mechanics with elimination-based gameplay.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/games-programming-pig-elimination-simulator/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Battle of The Tanks] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="web javascript game">
+                    <div class="relative overflow-hidden">
+                        <!-- A web-based tank battle game showing tanks, projectiles and battlefield terrain -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2021/12/image-1.png" alt="Battle of The Tanks web game" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-play text-2xl mb-2"></i>
+                                <p class="font-medium">Play Game</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-sm rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-sm rounded-full">Web Game</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-sm rounded-full">Action</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Battle of The Tanks</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Web-based tank combat game built with JavaScript and HTML5 Canvas, featuring real-time multiplayer battles, physics-based projectiles, and responsive controls.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/tanksJS/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Play Game <i class="fas fa-play ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Wizz] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="unreal game">
+                    <div class="relative overflow-hidden">
+                        <!-- A fantasy magical game scene with wizard character, spells and mystical environments -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2021/12/image-2.png" alt="Wizz Unreal Engine game" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 text-sm rounded-full">Unreal Engine</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-sm rounded-full">Fantasy</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Wizz</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            A magical adventure game created in Unreal Engine featuring spell-casting mechanics, immersive 3D environments, and character progression through mystical worlds.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/wizz-unreal-engine-game/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Underwater Platformer] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="web javascript game">
+                    <div class="relative overflow-hidden">
+                        <!-- An underwater platformer game showing aquatic environments, swimming mechanics and sea creatures -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2021/12/image-3.png" alt="Underwater platformer web game" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-play text-2xl mb-2"></i>
+                                <p class="font-medium">Play Game</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-sm rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full">Platformer</span>
+                            <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 text-sm rounded-full">Underwater</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Underwater Platformer</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            A unique underwater platformer game built with JavaScript featuring fluid swimming mechanics, aquatic obstacles, and immersive oceanic environments.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/Underwater-platformer/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Play Game <i class="fas fa-play ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Riot Rush] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="unity game">
+                    <div class="relative overflow-hidden">
+                        <!-- An action-packed riot game scene with crowds, urban environments and rush gameplay -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/05/riotRush-2.png" alt="Riot Rush Unity game" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 text-sm rounded-full">Unity</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-sm rounded-full">Action</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 text-sm rounded-full">Group Project</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">Riot Rush</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Fast-paced action game developed in Unity as part of an integrated group project, featuring crowd dynamics, urban environments, and intense rush-based gameplay mechanics.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/riot-rush-ci536-integrated-group-project/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [Narrative Game Design] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="narrative twine">
+                    <div class="relative overflow-hidden">
+                        <!-- A narrative game interface showing story text, character portraits and branching dialogue options -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/05/nelly.jpg" alt="Narrative game design with character Nelly" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 text-sm rounded-full">Twine</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-sm rounded-full">Interactive Fiction</span>
+                            <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 text-sm rounded-full">Storytelling</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">The Tale of Captain Rogers</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Interactive narrative adventure created with Twine featuring branching storylines, character development, and immersive storytelling with multiple endings and player choices.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/the-tale-of-captain-rogers-and-the-golden-spyglass/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+                <!-- @COMPONENT: ProjectCard [When The Devil Takes Hold] -->
+                <div class="project-card group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="unreal game horror">
+                    <div class="relative overflow-hidden">
+                        <!-- A dark horror game scene with atmospheric lighting, creepy environments and supernatural elements -->
+                        <img src="http://cc1501.brighton.domains/blog/wp-content/uploads/2023/01/thumbnail-1.png" alt="When The Devil Takes Hold horror game" class="project-image w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="font-medium">View Details</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 text-sm rounded-full">Unreal Engine 5.1</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-sm rounded-full">Horror</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 text-sm rounded-full">Atmospheric</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">When The Devil Takes Hold</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            A psychological horror experience created in Unreal Engine 5.1 featuring advanced lighting systems, atmospheric audio design, and immersive supernatural storytelling.
+                        </p>
+                        <a href="http://cc1501.brighton.domains/blog/when-the-devil-takes-hold/" class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: ProjectCard -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50 dark:bg-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400">
+                    Passionate game developer with expertise across multiple platforms and technologies
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                        I'm a dedicated game developer with extensive experience in creating immersive gaming experiences across various platforms and technologies. From low-level C++ engine development to high-level Unity and Unreal Engine projects, I enjoy tackling technical challenges and bringing creative visions to life.
+                    </p>
+                    <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                        My expertise spans game engines, AI systems, web technologies, and narrative design. I'm passionate about pushing the boundaries of interactive entertainment and creating memorable player experiences.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Technical Skills</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">C++</span>
+                                    <span class="text-sm text-slate-500 dark:text-slate-400">Advanced</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="bg-primary-500 h-2 rounded-full" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Unity</span>
+                                    <span class="text-sm text-slate-500 dark:text-slate-400">Expert</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="bg-primary-500 h-2 rounded-full" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Unreal Engine</span>
+                                    <span class="text-sm text-slate-500 dark:text-slate-400">Advanced</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="bg-primary-500 h-2 rounded-full" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">JavaScript</span>
+                                    <span class="text-sm text-slate-500 dark:text-slate-400">Proficient</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="bg-primary-500 h-2 rounded-full" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg">
+                            <i class="fas fa-gamepad text-3xl text-primary-500 mb-3"></i>
+                            <h4 class="font-bold text-2xl text-slate-900 dark:text-slate-100">10+</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Projects Completed</p>
+                        </div>
+                        <div class="text-center p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg">
+                            <i class="fas fa-code text-3xl text-primary-500 mb-3"></i>
+                            <h4 class="font-bold text-2xl text-slate-900 dark:text-slate-100">5+</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Technologies</p>
+                        </div>
+                        <div class="text-center p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg">
+                            <i class="fas fa-cogs text-3xl text-primary-500 mb-3"></i>
+                            <h4 class="font-bold text-2xl text-slate-900 dark:text-slate-100">3+</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Game Engines</p>
+                        </div>
+                        <div class="text-center p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg">
+                            <i class="fas fa-users text-3xl text-primary-500 mb-3"></i>
+                            <h4 class="font-bold text-2xl text-slate-900 dark:text-slate-100">Team</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400">
+                    Ready to bring your next gaming project to life? Let's discuss your ideas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                            <i class="fas fa-envelope text-primary-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Email</h3>
+                            <p class="text-slate-600 dark:text-slate-400">hello@gamedev.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                            <i class="fab fa-github text-primary-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">GitHub</h3>
+                            <p class="text-slate-600 dark:text-slate-400">github.com/gamedev</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin text-primary-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">LinkedIn</h3>
+                            <p class="text-slate-600 dark:text-slate-400">linkedin.com/in/gamedev</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-6" data-mock="true">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-slate-400">&copy; 2024 Game Developer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        (function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or default to light mode
+            const savedTheme = localStorage.getItem('theme');
+            const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const currentTheme = savedTheme || systemPreference;
+            
+            html.classList.toggle('dark', currentTheme === 'dark');
+            
+            themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.contains('dark');
+                html.classList.toggle('dark', !isDark);
+                localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            });
+        })();
+
+        // Project Filtering
+        (function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                        btn.classList.remove('bg-primary-500', 'text-white');
+                    });
+                    
+                    button.classList.add('active');
+                    button.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                    button.classList.add('bg-primary-500', 'text-white');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        const shouldShow = filter === 'all' || category.includes(filter);
+                        
+                        card.style.display = shouldShow ? 'block' : 'none';
+                        
+                        if (shouldShow) {
+                            card.style.animation = 'fadeIn 0.6s ease-out';
+                        }
+                    });
+                });
+            });
+        })();
+
+        // Mobile Menu Toggle
+        (function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('nav .hidden.md\\:flex');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('hidden');
+                    navLinks.classList.toggle('flex');
+                    navLinks.classList.toggle('flex-col');
+                    navLinks.classList.toggle('absolute');
+                    navLinks.classList.toggle('top-full');
+                    navLinks.classList.toggle('left-0');
+                    navLinks.classList.toggle('right-0');
+                    navLinks.classList.toggle('bg-white');
+                    navLinks.classList.toggle('dark:bg-slate-900');
+                    navLinks.classList.toggle('border-t');
+                    navLinks.classList.toggle('border-slate-200');
+                    navLinks.classList.toggle('dark:border-slate-700');
+                    navLinks.classList.toggle('py-4');
+                });
+            }
+        })();
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form Submission Handler (Mock)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // TODO: Implement actual form submission logic
+            alert('Thank you for your message! This is a demo form.');
+        });
+    </script>
+
+</body>
+</html>
