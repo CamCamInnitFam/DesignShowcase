@@ -1,0 +1,153 @@
+[
+  {
+    "id": "collision-game-engine-subsystem",
+    "title": "Collision Game Engine Subsystem",
+    "description": "Advanced collision detection and physics subsystem built in C++ with optimized spatial partitioning algorithms.",
+    "technologies": ["C++", "Game Engine"],
+    "category": "Game Engines",
+    "imageUrl": "/images/collision.png",
+    "projectUrl": "/project/collision-game-engine-subsystem",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": "castle-rescue",
+    "title": "Castle Rescue",
+    "description": "Action-adventure game developed in Unity featuring puzzle-solving mechanics and medieval-themed gameplay.",
+    "technologies": ["Unity", "Game Design"],
+    "category": "Complete Games",
+    "imageUrl": "/images/castle.png",
+    "projectUrl": "/project/castle-rescue",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": "rts-game-with-ai",
+    "title": "RTS Game with AI",
+    "description": "Real-time strategy game featuring advanced AI behaviors, pathfinding, and strategic decision-making systems.",
+    "technologies": ["C++", "AI"],
+    "category": "Complete Games",
+    "imageUrl": "/images/rts.png",
+    "projectUrl": "/project/rts-game-with-ai",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": "pig-elimination-simulator",
+    "title": "Pig Elimination Simulator",
+    "description": "Simulation game demonstrating object-oriented programming principles and game state management in C++.",
+    "technologies": ["C++", "Simulation"],
+    "category": "Complete Games",
+    "imageUrl": "/images/pigelimsim.png",
+    "projectUrl": "/project/pig-elimination-simulator",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": "battle-of-the-tanks",
+    "title": "Battle of The Tanks",
+    "description": "Browser-based tank combat game built with JavaScript and HTML5 Canvas, featuring real-time multiplayer action.",
+    "technologies": ["JavaScript", "Web"],
+    "category": "Web Games",
+    "imageUrl": "/images/battle.png",
+    "projectUrl": "/project/battle-of-the-tanks",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": "wizz",
+    "title": "Wizz",
+    "description": "3D adventure game developed in Unreal Engine featuring magic-based gameplay mechanics and immersive environments.",
+    "technologies": ["Unreal Engine", "3D"],
+    "category": "Complete Games",
+    "imageUrl": "/images/wizz.png",
+    "projectUrl": "/project/wizz",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": "underwater-platformer",
+    "title": "Underwater Platformer",
+    "description": "Aquatic-themed platformer game built with JavaScript, featuring fluid physics and underwater exploration mechanics.",
+    "technologies": ["JavaScript", "Platformer"],
+    "category": "Web Games",
+    "imageUrl": "/images/underwater.png",
+    "projectUrl": "/project/underwater-platformer",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": "riot-rush",
+    "title": "Riot Rush",
+    "description": "Collaborative Unity project developed as part of an integrated group assignment, featuring fast-paced action gameplay.",
+    "technologies": ["Unity", "Team Project"],
+    "category": "Complete Games",
+    "imageUrl": "/images/riot.png",
+    "projectUrl": "/project/riot-rush",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": "the-tale-of-captain-rogers",
+    "title": "The Tale of Captain Rogers",
+    "description": "Interactive narrative adventure created with Twine, featuring branching storylines and character-driven storytelling.",
+    "technologies": ["Twine", "Narrative Design"],
+    "category": "Narrative Design",
+    "imageUrl": "/images/rogers.png",
+    "projectUrl": "/project/the-tale-of-captain-rogers",
+    "status": "completed",
+    "featured": false
+  },
+  {
+    "id": "when-the-devil-takes-hold",
+    "title": "When The Devil Takes Hold",
+    "description": "Atmospheric horror game developed in Unreal Engine 5.1, showcasing advanced lighting and environmental storytelling.",
+    "technologies": ["Unreal Engine 5.1", "Horror"],
+    "category": "Complete Games",
+    "imageUrl": "/images/devil.png",
+    "projectUrl": "/project/when-the-devil-takes-hold",
+    "status": "completed",
+    "featured": true
+  },
+  {
+    "id": "compression-algorithm",
+    "title": "Compression Algorithm",
+    "description": "Custom data compression algorithm implementation showcasing algorithmic problem-solving skills. Project documentation coming soon.",
+    "technologies": ["Java", "Algorithms"],
+    "category": "Algorithms",
+    "projectUrl": "/project/compression-algorithm",
+    "status": "coming-soon",
+    "featured": false
+  },
+  {
+    "id": "tankz-multiplayer-game",
+    "title": "Tankz - Multiplayer Game",
+    "description": "Network-based multiplayer tank combat game demonstrating networked gameplay programming. Built using Java and C++.",
+    "technologies": ["Java", "C++", "Networking"],
+    "category": "Complete Games",
+    "projectUrl": "/project/tankz-multiplayer-game",
+    "status": "in-progress",
+    "featured": false
+  },
+  {
+    "id": "vr-game",
+    "title": "VR Game",
+    "description": "Virtual reality experience developed in Unity, exploring immersive interaction design and 3D spatial programming.",
+    "technologies": ["Unity", "VR", "3D"],
+    "category": "Complete Games",
+    "projectUrl": "/project/vr-game",
+    "status": "coming-soon",
+    "featured": false
+  },
+  {
+    "id": "in-development-placeholder",
+    "title": "New Horror Game (In Development)",
+    "description": "Placeholder for a new immersive horror experience. Content and images coming soon.",
+    "technologies": [],
+    "category": "Complete Games",
+    "imageUrl": "/images/placeholder.png",
+    "projectUrl": "/project/new-horror-game",
+    "status": "in-progress",
+    "featured": false
+  }
+]
