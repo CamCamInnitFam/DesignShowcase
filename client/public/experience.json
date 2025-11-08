@@ -1,0 +1,16 @@
+[
+  {
+    "id": "clarksons-research-placement",
+    "title": "Software Developer - Placement Year",
+    "company": "Clarksons Research",
+    "description": "Full-time placement position developing maritime industry software solutions and data management systems",
+    "technologies": ["C#", "XAML", "VBA", "SQL"],
+    "responsibilities": [
+      "Developed desktop applications for maritime data analysis",
+      "Designed and optimized database structures for shipping information",
+      "Created user interfaces using XAML for enhanced user experience",
+      "Automated data processing workflows using VBA",
+      "Collaborated with maritime industry professionals to understand business requirements"
+    ]
+  }
+]
