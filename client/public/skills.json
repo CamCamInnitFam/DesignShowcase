@@ -1,0 +1,50 @@
+[
+  {
+    "id": "programming-languages",
+    "category": "Programming Languages",
+    "title": "Programming Languages",
+    "description": "Proficient in multiple programming paradigms",
+    "technologies": ["C++", "C#", "JavaScript", "Java"],
+    "icon": "fas fa-code"
+  },
+  {
+    "id": "game-development",
+    "category": "Game Development",
+    "title": "Game Development",
+    "description": "Proficient with game engines and design",
+    "technologies": ["Unity", "Unreal Engine", "Game Design"],
+    "icon": "fas fa-gamepad"
+  },
+  {
+    "id": "web-development",
+    "category": "Web Development",
+    "title": "Web Development",
+    "description": "Proficient in modern web technologies",
+    "technologies": ["HTML5", "CSS3", "Canvas API"],
+    "icon": "fas fa-globe"
+  },
+  {
+    "id": "db-tools",
+    "category": "Database & Tools",
+    "title": "Database & Tools",
+    "description": "Proficient with data management and development tools",
+    "technologies": ["SQL", "XAML", "VBA"],
+    "icon": "fas fa-database"
+  },
+  {
+    "id": "creative-tools",
+    "category": "Creative Tools",
+    "title": "Creative Tools",
+    "description": "Proficient in interactive storytelling and design",
+    "technologies": ["Twine", "Narrative Design", "UI/UX"],
+    "icon": "fas fa-pen-fancy"
+  },
+  {
+    "id": "specializations",
+    "category": "Specializations",
+    "title": "Specializations",
+    "description": "Proficient in computer science concepts",
+    "technologies": ["AI", "Algorithms", "Physics"],
+    "icon": "fas fa-brain"
+  }
+]
