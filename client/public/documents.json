@@ -1,0 +1,40 @@
+[
+  {
+    "id": "cv",
+    "title": "Cameron Crook - CV",
+    "description": "Comprehensive curriculum vitae highlighting education, technical skills, and professional experience",
+    "type": "cv",
+    "fileUrl": "/documents/cameron-crook-cv.pdf"
+  },
+  {
+    "id": "collision-report",
+    "title": "Collision Detection System - Technical Report",
+    "description": "Detailed technical writeup covering the implementation of spatial partitioning algorithms and collision optimization",
+    "type": "project-writeup",
+    "fileUrl": "/documents/collision-detection-report.pdf",
+    "projectId": "collision-game-engine-subsystem"
+  },
+  {
+    "id": "castle-design-doc",
+    "title": "Castle Rescue - Game Design Document",
+    "description": "Complete game design document including mechanics, level design, and development process",
+    "type": "project-writeup",
+    "fileUrl": "/documents/castle-rescue-design-doc.pdf",
+    "projectId": "castle-rescue"
+  },
+  {
+    "id": "rts-paper",
+    "title": "RTS AI Implementation - Research Paper",
+    "description": "Academic paper detailing AI decision-making algorithms and pathfinding implementations",
+    "type": "project-writeup",
+    "fileUrl": "/documents/rts-ai-research-paper.pdf",
+    "projectId": "rts-game-with-ai"
+  },
+  {
+    "id": "placeholder-doc",
+    "title": "New Placeholder Report",
+    "description": "Reserved slot for future project documentation. File coming soon.",
+    "type": "project-writeup",
+    "fileUrl": "/documents/placeholder.pdf"
+  }
+]
